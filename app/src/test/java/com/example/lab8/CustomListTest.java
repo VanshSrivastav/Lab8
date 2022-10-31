@@ -11,6 +11,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import kotlin.random.FallbackThreadLocalRandom;
+
 public class CustomListTest {
     private CustomList list;
 /**
@@ -45,6 +47,16 @@ public CustomList MockCityList(){
         assertEquals(list.hasCity(city), true);
     }
 
+    @Test
+    public void deleteCityTest(){
+        list = MockCityList();
+        City city = new City("Spokane", "WA");
+        list.addCity(city);
+        list.deleteCity(city);
+        assertEquals(list.hasCity(city), false);
+
+
+    }
 
 
 }

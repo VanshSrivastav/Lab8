@@ -58,5 +58,13 @@ public CustomList MockCityList(){
 
     }
 
+    @Test
+    public void countCityTest(){
+        list = MockCityList();
+        City city = new City("Scranton", "PA");
+        list.addCity(city);
+        assertEquals(list.getCount(), 1);
+    }
+
 
 }
